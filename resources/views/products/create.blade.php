@@ -8,7 +8,7 @@
             @endforeach
         </ul>
     @endif -->
-{{-- <x-errors /> --}}
+<x-error />
     <form method="POST" action="{{ route('products.store') }}">
         
         <x-products.form />

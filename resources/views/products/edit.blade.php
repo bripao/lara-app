@@ -2,7 +2,7 @@
     
 <h1>Edit Product</h1> 
 
-{{-- <x-errors /> --}}
+<x-error />
 <form method="POST" action="{{ route('products.update', $product)}}">
     @method('PATCH')
     
