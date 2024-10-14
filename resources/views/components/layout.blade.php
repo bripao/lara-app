@@ -9,7 +9,8 @@
 </head>
 <body>
 
+    <a href="{{ route('products.index') }}">Home</a>
     {{ $slot }}
-    
+
 </body>
 </html>

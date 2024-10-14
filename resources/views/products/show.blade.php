@@ -4,9 +4,9 @@
     <p>{{ $product->description }}</p>
     <p>{{ $product->size }}</p>
 
-    <a href="http:{{ route('products.edit', $products->id) }}">Edit</a>
+    <a href="{{ route('products.edit', $product->id) }}">Edit</a>
 
-    <form action="{{ route('$products->destroy', $product)}}" method="post">
+    <form action="{{ route('products.destroy', $product)}}" method="post">
         @csrf
         @method('DELETE')
 

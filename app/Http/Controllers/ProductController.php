@@ -10,6 +10,7 @@ class ProductController extends Controller
 {
     public function index()
     {
+
         return view('products.index', [
             "products" => Product::all()
         ]);
@@ -20,7 +21,7 @@ class ProductController extends Controller
         return view('products.create');
     }
 
-    public function store(SaveproductRequest $request)
+    public function store(SaveProductRequest $request)
     {
         // $product = new Product();
 
