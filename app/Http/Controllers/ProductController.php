@@ -12,7 +12,7 @@ class ProductController extends Controller
     {
 
         return view('products.index', [
-            "products" => Product::all()
+            "products" => Product::orderBy('created_at')->paginate(3)
         ]);
     }
 
@@ -39,7 +39,8 @@ class ProductController extends Controller
 
         $product = Product::create($request->validated());
 
-        return redirect()->route('products.show', $product);
+        return redirect()->route('products.show', $product)
+            ->with('status', 'Product created');
     }
 
     public function show(Product $product)
@@ -62,13 +63,15 @@ class ProductController extends Controller
     {
         $product->update($request->validated());
 
-        return redirect()->route('products.show', $product);
+        return redirect()->route('products.show', $product)
+            ->with('status', 'Product updated');;
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')
+            ->with('status', 'Product deleted');
     }
 }

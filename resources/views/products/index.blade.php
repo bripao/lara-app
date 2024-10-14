@@ -13,4 +13,5 @@
         
     @endforeach
 
+    {{ $products->links('vendor/pagination/simple-default') }}
 </x-layout>
