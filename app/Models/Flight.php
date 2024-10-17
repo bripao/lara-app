@@ -11,4 +11,9 @@ class Flight extends Model
     //protected $table = 'my_flights'; --> IF THERE IS NO A TABLE WITH PLURAL NAME
     //protected $primaryKey = 'flight_id'; --> IF THERE IS NO A PRIMARY KEY WITH THE NAME = ID
 
+    protected $fillable = [
+        'title',
+        'excerpt',
+        'isbn'
+    ];
 }

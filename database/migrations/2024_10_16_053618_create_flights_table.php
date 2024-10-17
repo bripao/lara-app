@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('title', 200);
+            $table->string('excerpt', 500)->nullable();
+            $table->string('isbn', 17)->unique();
         });
     }
 
