@@ -16,3 +16,5 @@ Route::controller(ProductController::class)
         Route::patch('/{product}', 'update')->name('update');
         Route::delete('/{product}', 'destroy')->name('destroy');
     });
+
+Route::get('/flight', [ProductController::class, 'myTest'])->name('flight');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Flight;
 use App\Http\Requests\SaveProductRequest;
 
 class ProductController extends Controller
@@ -73,5 +74,14 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')
             ->with('status', 'Product deleted');
+    }
+
+    /* MY TEST PB */
+    public function myTest()
+    {
+        return view('flight.index', [
+            //"products" => Product::orderBy('created_at')->paginate(3)
+            "flights" => Flight::orderBy('created_at')->paginate(3)
+        ]);
     }
 }
