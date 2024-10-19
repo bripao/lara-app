@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FlightController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home');
@@ -17,4 +18,6 @@ Route::controller(ProductController::class)
         Route::delete('/{product}', 'destroy')->name('destroy');
     });
 
-Route::get('/flight', [ProductController::class, 'myTest'])->name('flight');
+Route::get('/flight', [FlightController::class, 'index'])->name('flight.index');
+Route::get('/flight/create', [FlightController::class, 'create'])->name('flight.create');
+Route::post('/flight/store', [FlightController::class, 'store'])->name('flight.store');
